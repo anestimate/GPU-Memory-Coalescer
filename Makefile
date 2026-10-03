@@ -85,7 +85,7 @@ wave: run
 	gtkwave wave.vcd
 
 lint:
-	verilator --lint-only --assert -Wall --Wno-UNUSEDPARAM -Wno-UNUSEDPARAM -y rtl --top-module $(TOP) $(RTL)
+	verilator --lint-only --assert -Wall --Wno-UNUSEDPARAM -Wno-UNUSEDSIGNAL -y rtl --top-module $(TOP) $(RTL)
 
 clean:
 	rm -rf obj_dir wave.vcd results/xval results/sweeps results/cycles_after.csv
