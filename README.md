@@ -1,4 +1,5 @@
 # GPU Memory Coalescer & Cache: RTL with a Cross-Validated Performance Model
+![CI](https://github.com/anestimate/GPU-Memory-Coalescer/actions/workflows/ci.yml/badge.svg)
 
 This repository contains the design, verification and analysis of a **GPU-style Memory Coalescing Unit and Set-Associative Cache**, implemented twice: once in **SystemVerilog** and once as an independent **C++ Performance Model**. This model also adds **MSHRs** for non-blocking misses, and **Bélády's OPT** (which hardware cannot implement) as a lower bound for LRU.
 
