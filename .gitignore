@@ -1,0 +1,20 @@
+#build output
+obj_dir/
+model/model
+model/build
+model/model_debug
+*.o
+*.d
+
+# simulation output
+*.vcd
+*.log
+
+#gen results
+results/xval/
+results/sweeps/
+results/cycles_after.csv
+
+
+#editor
+.vscode/

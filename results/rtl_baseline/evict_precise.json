@@ -1,0 +1,1 @@
+{"config":{"ways":4, "line_bytes": 64,"cache_bytes": 8192},"counters":{"requests":6,"hits": 1,"misses":5,"evictions":1,"mem_reqs":5,"cycles":534,"mem_bytes":320},"fill_logs":[{ "set":7,"way":0,"tag":0},{ "set":7,"way":1,"tag":1},{ "set":7,"way":2,"tag":2},{ "set":7,"way":3,"tag":3},{ "set":7,"way":1,"tag":4}]}
