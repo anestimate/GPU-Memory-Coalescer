@@ -9,7 +9,7 @@ RTL := \
 	rtl/coalescer.sv \
 	rtl/mem_model.sv
 
-TB := tb/tb_top.cpp
+TB := $(CURDIR)/tb/tb_top.cpp
 SIM := $(OBJ)/V$(TOP)
 
 W ?= broadcast
