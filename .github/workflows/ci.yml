@@ -24,7 +24,7 @@ jobs:
         python3 --version
 
     - name: Lint RTL
-      run: make Lint
+      run: make lint
 
     - name: Cross-validate, correlate, sweep, plot
       run: make reproduce
