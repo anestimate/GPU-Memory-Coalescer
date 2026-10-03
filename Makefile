@@ -26,7 +26,7 @@ SIM := $(OBJ)/V$(TOP)
 WORKLOADS := broadcast coalesced_aligned coalesced_misaligned strided_k reverse transpose tiled random_uniform gather hotspot
 XVAL := results/xval/$(CFG)
 MODEL_ARGS := ways=$(WAYS) line_bytes=$(LINE_BYTES) cache_bytes=$(CACHE_BYTES)
-VFLAGS := --cc --exe --build -j 0 --trace --assert -Wall -Wno-UNUSEDPARAM -Wno-UNUSEDSIGNAL -y rtl --top-module $(TOP) --Mdir $(OBJ) $(addprefix +define+,$(DEFINES)) -CFLAGS "-I$(CURDIR)/model/tests -I$(CURDIR)/model/include $(addprefix -D, $(DEFINES))"
+VFLAGS := --cc --exe --build -j 0 --trace --assert --unroll-count 1024 -Wall -Wno-UNUSEDPARAM -Wno-UNUSEDSIGNAL -y rtl --top-module $(TOP) --Mdir $(OBJ) $(addprefix +define+,$(DEFINES)) -CFLAGS "-I$(CURDIR)/model/tests -I$(CURDIR)/model/include $(addprefix -D, $(DEFINES))"
 .PHONY: all run wave lint clean xval xval_all grid correlate sweep figures reproduce
 
 all:
@@ -85,7 +85,7 @@ wave: run
 	gtkwave wave.vcd
 
 lint:
-	verilator --lint-only --assert -Wall --Wno-UNUSEDPARAM -Wno-UNUSEDSIGNAL -y rtl --top-module $(TOP) $(RTL)
+	verilator --lint-only --assert --unroll-count 1024 -Wall -Wno-UNUSEDPARAM -Wno-UNUSEDSIGNAL -y rtl --top-module $(TOP) $(RTL)
 
 clean:
 	rm -rf obj_dir wave.vcd results/xval results/sweeps results/cycles_after.csv
